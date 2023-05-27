@@ -31,6 +31,25 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbpgs_mascotas = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_agregarM = new System.Windows.Forms.Button();
+            this.cbox_dueño = new System.Windows.Forms.ComboBox();
+            this.txt_razaM = new System.Windows.Forms.TextBox();
+            this.txt_edadM = new System.Windows.Forms.TextBox();
+            this.txt_nombreM = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvMascotas = new System.Windows.Forms.DataGridView();
+            this.nombreM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueño = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbpg_dueños = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Agregar = new System.Windows.Forms.Button();
@@ -45,33 +64,14 @@
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabcontrol = new System.Windows.Forms.TabControl();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nombreM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.raza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueño = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_nombreM = new System.Windows.Forms.TextBox();
-            this.txt_edadM = new System.Windows.Forms.TextBox();
-            this.txt_razaM = new System.Windows.Forms.TextBox();
-            this.cbox_dueño = new System.Windows.Forms.ComboBox();
-            this.btn_agregarM = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.tbpgs_mascotas.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             this.tbpg_dueños.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDueños)).BeginInit();
             this.tabcontrol.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -84,7 +84,7 @@
             // 
             this.tbpgs_mascotas.Controls.Add(this.groupBox3);
             this.tbpgs_mascotas.Controls.Add(this.groupBox2);
-            this.tbpgs_mascotas.Controls.Add(this.dataGridView1);
+            this.tbpgs_mascotas.Controls.Add(this.dgvMascotas);
             this.tbpgs_mascotas.Location = new System.Drawing.Point(4, 29);
             this.tbpgs_mascotas.Name = "tbpgs_mascotas";
             this.tbpgs_mascotas.Padding = new System.Windows.Forms.Padding(3);
@@ -93,6 +93,185 @@
             this.tbpgs_mascotas.Text = "Mascotas";
             this.tbpgs_mascotas.UseVisualStyleBackColor = true;
             this.tbpgs_mascotas.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btn_buscar);
+            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Location = new System.Drawing.Point(591, 253);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(371, 233);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Buscar";
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.Location = new System.Drawing.Point(6, 121);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(351, 36);
+            this.btn_buscar.TabIndex = 8;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(84, 70);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(281, 27);
+            this.textBox4.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 20);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Nombre";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_agregarM);
+            this.groupBox2.Controls.Add(this.cbox_dueño);
+            this.groupBox2.Controls.Add(this.txt_razaM);
+            this.groupBox2.Controls.Add(this.txt_edadM);
+            this.groupBox2.Controls.Add(this.txt_nombreM);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(591, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(371, 237);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Agregar";
+            // 
+            // btn_agregarM
+            // 
+            this.btn_agregarM.Location = new System.Drawing.Point(6, 185);
+            this.btn_agregarM.Name = "btn_agregarM";
+            this.btn_agregarM.Size = new System.Drawing.Size(351, 36);
+            this.btn_agregarM.TabIndex = 2;
+            this.btn_agregarM.Text = "Agregar";
+            this.btn_agregarM.UseVisualStyleBackColor = true;
+            this.btn_agregarM.Click += new System.EventHandler(this.btn_agregarM_Click);
+            // 
+            // cbox_dueño
+            // 
+            this.cbox_dueño.FormattingEnabled = true;
+            this.cbox_dueño.Location = new System.Drawing.Point(76, 146);
+            this.cbox_dueño.Name = "cbox_dueño";
+            this.cbox_dueño.Size = new System.Drawing.Size(204, 28);
+            this.cbox_dueño.TabIndex = 7;
+            // 
+            // txt_razaM
+            // 
+            this.txt_razaM.Location = new System.Drawing.Point(76, 109);
+            this.txt_razaM.Name = "txt_razaM";
+            this.txt_razaM.Size = new System.Drawing.Size(281, 27);
+            this.txt_razaM.TabIndex = 6;
+            // 
+            // txt_edadM
+            // 
+            this.txt_edadM.Location = new System.Drawing.Point(76, 76);
+            this.txt_edadM.Name = "txt_edadM";
+            this.txt_edadM.Size = new System.Drawing.Size(281, 27);
+            this.txt_edadM.TabIndex = 5;
+            // 
+            // txt_nombreM
+            // 
+            this.txt_nombreM.Location = new System.Drawing.Point(76, 43);
+            this.txt_nombreM.Name = "txt_nombreM";
+            this.txt_nombreM.Size = new System.Drawing.Size(281, 27);
+            this.txt_nombreM.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 149);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 20);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Dueño";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Raza";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Edad";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Nombre";
+            // 
+            // dgvMascotas
+            // 
+            this.dgvMascotas.AllowUserToAddRows = false;
+            this.dgvMascotas.AllowUserToDeleteRows = false;
+            this.dgvMascotas.AllowUserToResizeColumns = false;
+            this.dgvMascotas.AllowUserToResizeRows = false;
+            this.dgvMascotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMascotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreM,
+            this.edad,
+            this.raza,
+            this.dueño});
+            this.dgvMascotas.Location = new System.Drawing.Point(6, 10);
+            this.dgvMascotas.Name = "dgvMascotas";
+            this.dgvMascotas.ReadOnly = true;
+            this.dgvMascotas.RowHeadersWidth = 51;
+            this.dgvMascotas.RowTemplate.Height = 29;
+            this.dgvMascotas.Size = new System.Drawing.Size(567, 476);
+            this.dgvMascotas.TabIndex = 1;
+            // 
+            // nombreM
+            // 
+            this.nombreM.HeaderText = "Nombre";
+            this.nombreM.MinimumWidth = 6;
+            this.nombreM.Name = "nombreM";
+            this.nombreM.ReadOnly = true;
+            // 
+            // edad
+            // 
+            this.edad.HeaderText = "Edad";
+            this.edad.MinimumWidth = 6;
+            this.edad.Name = "edad";
+            this.edad.ReadOnly = true;
+            // 
+            // raza
+            // 
+            this.raza.HeaderText = "Raza";
+            this.raza.MinimumWidth = 6;
+            this.raza.Name = "raza";
+            this.raza.ReadOnly = true;
+            // 
+            // dueño
+            // 
+            this.dueño.HeaderText = "Dueño";
+            this.dueño.MinimumWidth = 6;
+            this.dueño.Name = "dueño";
+            this.dueño.ReadOnly = true;
             // 
             // tbpg_dueños
             // 
@@ -235,185 +414,6 @@
             this.tabcontrol.Size = new System.Drawing.Size(976, 525);
             this.tabcontrol.TabIndex = 1;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreM,
-            this.edad,
-            this.raza,
-            this.dueño});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(567, 476);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // nombreM
-            // 
-            this.nombreM.HeaderText = "Nombre";
-            this.nombreM.MinimumWidth = 6;
-            this.nombreM.Name = "nombreM";
-            this.nombreM.ReadOnly = true;
-            // 
-            // edad
-            // 
-            this.edad.HeaderText = "Edad";
-            this.edad.MinimumWidth = 6;
-            this.edad.Name = "edad";
-            this.edad.ReadOnly = true;
-            // 
-            // raza
-            // 
-            this.raza.HeaderText = "Raza";
-            this.raza.MinimumWidth = 6;
-            this.raza.Name = "raza";
-            this.raza.ReadOnly = true;
-            // 
-            // dueño
-            // 
-            this.dueño.HeaderText = "Dueño";
-            this.dueño.MinimumWidth = 6;
-            this.dueño.Name = "dueño";
-            this.dueño.ReadOnly = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btn_agregarM);
-            this.groupBox2.Controls.Add(this.cbox_dueño);
-            this.groupBox2.Controls.Add(this.txt_razaM);
-            this.groupBox2.Controls.Add(this.txt_edadM);
-            this.groupBox2.Controls.Add(this.txt_nombreM);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(591, 10);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(371, 237);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Agregar";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btn_buscar);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(591, 253);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(371, 233);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Buscar";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nombre";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Edad";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 112);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Raza";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 149);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Dueño";
-            // 
-            // txt_nombreM
-            // 
-            this.txt_nombreM.Location = new System.Drawing.Point(76, 43);
-            this.txt_nombreM.Name = "txt_nombreM";
-            this.txt_nombreM.Size = new System.Drawing.Size(281, 27);
-            this.txt_nombreM.TabIndex = 4;
-            // 
-            // txt_edadM
-            // 
-            this.txt_edadM.Location = new System.Drawing.Point(76, 76);
-            this.txt_edadM.Name = "txt_edadM";
-            this.txt_edadM.Size = new System.Drawing.Size(281, 27);
-            this.txt_edadM.TabIndex = 5;
-            // 
-            // txt_razaM
-            // 
-            this.txt_razaM.Location = new System.Drawing.Point(76, 109);
-            this.txt_razaM.Name = "txt_razaM";
-            this.txt_razaM.Size = new System.Drawing.Size(281, 27);
-            this.txt_razaM.TabIndex = 6;
-            // 
-            // cbox_dueño
-            // 
-            this.cbox_dueño.FormattingEnabled = true;
-            this.cbox_dueño.Location = new System.Drawing.Point(76, 146);
-            this.cbox_dueño.Name = "cbox_dueño";
-            this.cbox_dueño.Size = new System.Drawing.Size(204, 28);
-            this.cbox_dueño.TabIndex = 7;
-            // 
-            // btn_agregarM
-            // 
-            this.btn_agregarM.Location = new System.Drawing.Point(6, 185);
-            this.btn_agregarM.Name = "btn_agregarM";
-            this.btn_agregarM.Size = new System.Drawing.Size(351, 36);
-            this.btn_agregarM.TabIndex = 2;
-            this.btn_agregarM.Text = "Agregar";
-            this.btn_agregarM.UseVisualStyleBackColor = true;
-            this.btn_agregarM.Click += new System.EventHandler(this.btn_agregarM_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 73);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 20);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Nombre";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(84, 70);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(281, 27);
-            this.textBox4.TabIndex = 8;
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.Location = new System.Drawing.Point(6, 121);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(351, 36);
-            this.btn_buscar.TabIndex = 8;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -423,16 +423,16 @@
             this.Name = "Form1";
             this.Text = "Veterinaria";
             this.tbpgs_mascotas.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).EndInit();
             this.tbpg_dueños.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDueños)).EndInit();
             this.tabcontrol.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -469,7 +469,7 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private DataGridView dataGridView1;
+        private DataGridView dgvMascotas;
         private DataGridViewTextBoxColumn nombreM;
         private DataGridViewTextBoxColumn edad;
         private DataGridViewTextBoxColumn raza;

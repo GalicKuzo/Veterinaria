@@ -26,6 +26,9 @@ namespace Veterinaria
             dgvDueños.Rows[fila].Cells[0].Value = Nombre;
             dgvDueños.Rows[fila].Cells[1].Value = Correo;
             dgvDueños.Rows[fila].Cells[2].Value = Telefono;
+            List<string> listDueños = new List<string>();
+            listDueños.Add(Nombre);
+            cbox_dueño.Items.AddRange(listDueños.ToArray());
         }
 
         private void txtbox_telefono_TextChanged(object sender, EventArgs e)
@@ -51,7 +54,15 @@ namespace Veterinaria
 
         private void btn_agregarM_Click(object sender, EventArgs e)
         {
-
+            int fila = dgvMascotas.Rows.Add();
+            string Nombre = Convert.ToString(txt_nombreM.Text).ToUpper();
+            string Edad = Convert.ToString(txt_edadM.Text).ToUpper();
+            string Raza = Convert.ToString(txt_razaM.Text).ToUpper();
+            string Dueño = cbox_dueño.SelectedItem.ToString();
+            dgvMascotas.Rows[fila].Cells[0].Value = Nombre;
+            dgvMascotas.Rows[fila].Cells[1].Value = Edad;
+            dgvMascotas.Rows[fila].Cells[2].Value = Raza;
+            dgvMascotas.Rows[fila].Cells[3].Value = Dueño;
         }
     }
 }
