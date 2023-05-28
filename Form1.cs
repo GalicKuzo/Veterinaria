@@ -19,6 +19,7 @@ namespace Veterinaria
         }
         //lista de dueños
         List<string> listDueños = new List<string>();
+        //Funcion para agregar Dueños
         private void Agregar_Click(object sender, EventArgs e)
         {
             string Nombre = Convert.ToString(txtbox_nombre.Text).ToUpper();
@@ -40,7 +41,7 @@ namespace Veterinaria
         {
 
         }
-
+        //Funcion para solo permitir numeros
         private void txtbox_telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8)
@@ -48,7 +49,7 @@ namespace Veterinaria
                 e.Handled = true;
             }
         }
-
+        //Funcion para solo permitir letras
         private void txtbox_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8)
@@ -80,7 +81,7 @@ namespace Veterinaria
             txt_edadM.Text = string.Empty;
             txt_razaM.Text = string.Empty;
         }
-
+        //Funcion para buscar un nombre usando el metodo de recursividad
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             int i = listMascotas.Count - 1;
@@ -102,7 +103,7 @@ namespace Veterinaria
                     MessageBox.Show("¡La mascota que ha ingresado no se encuentra registrada!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        //Funcion para solo permitir letras
         private void txt_nombreM_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8)
@@ -110,7 +111,7 @@ namespace Veterinaria
                 e.Handled = true;
             }
         }
-
+        //Funcion para solo permitir numeros
         private void txt_edadM_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8)
@@ -118,7 +119,7 @@ namespace Veterinaria
                 e.Handled = true;
             }
         }
-
+        //Funcion para solo permitir letras
         private void txt_razaM_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8)
@@ -126,12 +127,12 @@ namespace Veterinaria
                 e.Handled = true;
             }
         }
-
+        //Funcion para solo permitir numeros
         private void txt_nombreB_TextChanged(object sender, EventArgs e)
         {
             
         }
-
+        //Funcion para solo permitir letras
         private void txt_nombreB_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8)

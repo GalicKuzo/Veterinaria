@@ -11,14 +11,14 @@ namespace Veterinaria
         public string Nombre { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
-
+        //Constructor
         public Dueño(string nombre, string correo, string telefono)
         {
             Nombre = nombre;
             Correo = correo;
             Telefono = telefono;
         }
-
+        //Funion para agregar elemtos a un DataGriedView
         public void AgregarFila(DataGridView dgv)
         {
             int fila = dgv.Rows.Add();

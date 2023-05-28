@@ -12,7 +12,7 @@ namespace Veterinaria
         public string Edad { get; set; }
         public string Raza { get; set; }
         public string Dueño { get; set; }
-
+        //Constructor
         public Mascotas (string nombre, string edad, string raza, string dueño)
         {
             Nombre = nombre;
@@ -20,6 +20,7 @@ namespace Veterinaria
             Raza = raza;
             Dueño = dueño;
         }
+        //Funion para agregar elemtos a un DataGriedView
         public void AgregarFila(DataGridView dgv)
         {
             int fila = dgv.Rows.Add();
