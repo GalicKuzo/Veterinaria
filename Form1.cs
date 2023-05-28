@@ -5,6 +5,7 @@ namespace Veterinaria
         public Form1()
         {
             InitializeComponent();
+            txtbox_correo.Text = "@gmail.com";
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -16,19 +17,23 @@ namespace Veterinaria
         {
 
         }
-
+        //lista de dueños
+        List<string> listDueños = new List<string>();
         private void Agregar_Click(object sender, EventArgs e)
         {
-            int fila = dgvDueños.Rows.Add();
             string Nombre = Convert.ToString(txtbox_nombre.Text).ToUpper();
             string Correo = Convert.ToString(txtbox_correo.Text).ToUpper();
             string Telefono = Convert.ToString(txtbox_telefono.Text).ToUpper();
-            dgvDueños.Rows[fila].Cells[0].Value = Nombre;
-            dgvDueños.Rows[fila].Cells[1].Value = Correo;
-            dgvDueños.Rows[fila].Cells[2].Value = Telefono;
-            List<string> listDueños = new List<string>();
-            listDueños.Add(Nombre);
-            cbox_dueño.Items.AddRange(listDueños.ToArray());
+            Dueño dueño = new Dueño(Nombre, Correo, Telefono);
+            dueño.AgregarFila(dgvDueños);
+            if (!listDueños.Contains(Nombre))
+            {
+                listDueños.Add(Nombre);
+                cbox_dueño.Items.Add(Nombre);
+            }
+            txtbox_nombre.Text = string.Empty;
+            txtbox_correo.Text = "@gmail.com";
+            txtbox_telefono.Text = string.Empty;
         }
 
         private void txtbox_telefono_TextChanged(object sender, EventArgs e)
@@ -51,18 +56,88 @@ namespace Veterinaria
                 e.Handled = true;
             }
         }
-
+        //lista de mascotas
+        List<string> listMascotas = new List<string>();
         private void btn_agregarM_Click(object sender, EventArgs e)
         {
-            int fila = dgvMascotas.Rows.Add();
             string Nombre = Convert.ToString(txt_nombreM.Text).ToUpper();
             string Edad = Convert.ToString(txt_edadM.Text).ToUpper();
             string Raza = Convert.ToString(txt_razaM.Text).ToUpper();
-            string Dueño = cbox_dueño.SelectedItem.ToString();
-            dgvMascotas.Rows[fila].Cells[0].Value = Nombre;
-            dgvMascotas.Rows[fila].Cells[1].Value = Edad;
-            dgvMascotas.Rows[fila].Cells[2].Value = Raza;
-            dgvMascotas.Rows[fila].Cells[3].Value = Dueño;
+            string Dueño;
+            //Excepcion por si el usuario ingresa un nombre que no esta definido en el ComboBox
+            try
+            {
+                Dueño = cbox_dueño.SelectedItem.ToString();
+            } catch
+            {
+                MessageBox.Show("¡El nombre que intenta seleccionar no existe!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            Mascotas mascota = new Mascotas(Nombre, Edad, Raza, Dueño);
+            mascota.AgregarFila(dgvMascotas);
+            listMascotas.Add(Nombre);
+            txt_nombreM.Text = string.Empty;
+            txt_edadM.Text = string.Empty;
+            txt_razaM.Text = string.Empty;
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            int i = listMascotas.Count - 1;
+            string Nombre = Convert.ToString(txt_nombreB.Text).ToUpper();
+            BuscarNombre(Nombre, i);
+        }
+        // Funcion para buscar el nombre de la mascota usando recursividad y las listas
+        private void BuscarNombre(string name, int n)
+        {
+            if (name == listMascotas[n])
+            {
+                MessageBox.Show("¡La mascota que ha ingresado si se encuentra registrada!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                if (n != 0)
+                {
+                    BuscarNombre(name, n-1);
+                } else
+                    MessageBox.Show("¡La mascota que ha ingresado no se encuentra registrada!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txt_nombreM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_edadM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_razaM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_nombreB_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_nombreB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

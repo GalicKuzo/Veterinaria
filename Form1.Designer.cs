@@ -33,7 +33,7 @@
             this.tbpgs_mascotas = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_buscar = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_nombreB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_agregarM = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btn_buscar);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.txt_nombreB);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(591, 253);
             this.groupBox3.Name = "groupBox3";
@@ -114,13 +114,16 @@
             this.btn_buscar.TabIndex = 8;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // textBox4
+            // txt_nombreB
             // 
-            this.textBox4.Location = new System.Drawing.Point(84, 70);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(281, 27);
-            this.textBox4.TabIndex = 8;
+            this.txt_nombreB.Location = new System.Drawing.Point(84, 70);
+            this.txt_nombreB.Name = "txt_nombreB";
+            this.txt_nombreB.Size = new System.Drawing.Size(281, 27);
+            this.txt_nombreB.TabIndex = 8;
+            this.txt_nombreB.TextChanged += new System.EventHandler(this.txt_nombreB_TextChanged);
+            this.txt_nombreB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreB_KeyPress);
             // 
             // label8
             // 
@@ -173,6 +176,7 @@
             this.txt_razaM.Name = "txt_razaM";
             this.txt_razaM.Size = new System.Drawing.Size(281, 27);
             this.txt_razaM.TabIndex = 6;
+            this.txt_razaM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_razaM_KeyPress);
             // 
             // txt_edadM
             // 
@@ -180,6 +184,7 @@
             this.txt_edadM.Name = "txt_edadM";
             this.txt_edadM.Size = new System.Drawing.Size(281, 27);
             this.txt_edadM.TabIndex = 5;
+            this.txt_edadM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_edadM_KeyPress);
             // 
             // txt_nombreM
             // 
@@ -187,6 +192,7 @@
             this.txt_nombreM.Name = "txt_nombreM";
             this.txt_nombreM.Size = new System.Drawing.Size(281, 27);
             this.txt_nombreM.TabIndex = 4;
+            this.txt_nombreM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreM_KeyPress);
             // 
             // label7
             // 
@@ -457,7 +463,7 @@
         private Label label1;
         private GroupBox groupBox3;
         private Button btn_buscar;
-        private TextBox textBox4;
+        private TextBox txt_nombreB;
         private Label label8;
         private GroupBox groupBox2;
         private Button btn_agregarM;
